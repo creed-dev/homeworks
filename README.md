@@ -1,2 +1,2 @@
 # homeworks
-My homeworks for GeekBrains
+This repository is created to store homework for GeekBrains
