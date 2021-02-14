@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.items-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items h1 {
+    margin-bottom: 50px;
+}
+
+.item {
+    border: 2px solid black;
+    width: 300px;
+    padding: 10px 0;
+}
+
+.item p {
+    font-size: 20px;
+    text-align: center;
+    margin: 5px 0 10px 0;
+}
+
+.item img {
+    width: 100%;
+    margin: 0 auto;
+    height: 225px;
+}
+
+.item button {
+    padding: 10px 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.basket-wrapper {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.basket-wrapper-count {
+    padding-bottom: 20px;
+    font-size: 20px;
+}
