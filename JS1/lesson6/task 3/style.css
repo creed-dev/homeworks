@@ -1,0 +1,43 @@
+.container {
+    width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}
+
+img {
+    width: 1000px;
+}
+
+.slider {
+    margin: 50px auto;
+    width: 1000px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider-line {
+    width: 3000px;
+    height: 500px;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+}
+
+.slider-prev, .slider-next {
+    font-size: 100px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    position: absolute;
+}
+
+.slider-next {
+    top: 200px;
+    left: 1100px;
+}
+
+.slider-prev {
+    top: 200px;
+    left: -60px;
+}
