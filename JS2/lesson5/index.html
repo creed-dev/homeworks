@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<div id="app">
+				<div class="container">
+					<header>
+						<div class="header__left">
+							<p class="fs-5">Общая стоимость товаров: {{ sumCart }}</p>
+						</div>
+						<div class="header__right">
+							<input
+								class="search"
+								id="search"
+								v-model="search"
+								v-on:input="searchHandler"
+							/>
+							<button class="btn btn-primary basket-btn">
+								Корзина ({{ cart.length }})
+							</button>
+						</div>
+					</header>
+					<div class="cart">
+						<ul>
+							<li v-for="cartItem in cart">{{ cartItem.product_name }}</li>
+						</ul>
+					</div>
+					<main class="cards">
+						<div class="fs-5 no-data" v-if="filtredGoods.length === 0">
+							Нет данных
+						</div>
+						<div
+							class="card"
+							style="width: 18rem"
+							v-for="(good, index) in filtredGoods"
+						>
+							<img
+								src="https://via.placeholder.com/100x80"
+								class="card-img-top"
+								alt="card-photo"
+							/>
+							<div class="card-body">
+								<h5 class="card-title">{{ good.product_name }}</h5>
+								<div class="card-bottom">
+									<p class="card-price">{{ good.price }}</p>
+									<a
+										href="#"
+										class="btn btn-success card-btn"
+										v-on:click="addToCart"
+										:data-index="index"
+										>Купить</a
+									>
+								</div>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="script.js"></script>
+</html>
