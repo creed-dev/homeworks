@@ -20,11 +20,11 @@ Vue.component('goods-item', {
 Vue.component('cart', {
 	// создание компонента корзины
 	template: `<div>
-    <button class="btn btn-primary cart-button" @click="openCartHandler" type="button">Корзина</button>
-    <div v-if="isVisibleCart" v-on:click="removeHandler">
-      <slot></slot>
-    </div>
-  </div>`,
+				<button class="btn btn-primary cart-button" @click="openCartHandler" type="button">Корзина</button>
+				<div v-if="isVisibleCart" v-on:click="removeHandler">
+				<slot></slot>
+				</div>
+			</div>`,
 	data() {
 		// данные компонента (Обязательно в виде метода!)
 		return {
@@ -42,13 +42,23 @@ Vue.component('cart', {
 	},
 });
 
+Vue.component('search', {
+	template: `<input id="search" @input="searchHandler" placeholder="Поиск..." />`,
+
+	methods: {
+		searchHandler(e) {
+			this.$emit('valueСhange', e);
+		},
+	},
+});
+
 Vue.component('cart-item', {
 	// Создание нового компонента
 	template: `<div class="card cart-item" :data-id="id">
 				<h5 class="card-title">{{ title }}</h5>
 				<p class="card-price">{{ price }}</p>
 				<slot></slot>
-		</div>`,
+			</div>`,
 	props: ['title', 'price', 'id'], // задаем параметры компонента
 });
 
@@ -79,11 +89,14 @@ const vue = new Vue({
 			this.cart.splice(goodIndex - 1, 1);
 		},
 
-		searchHandler() {
-			if (this.search === '') {
+		searchHandler(e) {
+			const {
+				target: { value },
+			} = e;
+			if (value === '') {
 				this.filtredGoods = this.goods;
 			}
-			const regexp = new RegExp(this.search, 'gi');
+			const regexp = new RegExp(value, 'gi');
 			this.filtredGoods = this.goods.filter(good => regexp.test(good.title));
 		},
 
