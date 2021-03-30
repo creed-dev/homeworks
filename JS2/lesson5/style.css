@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 1140px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.basket-btn {
+	margin-bottom: 10px;
+}
+
+.cards {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+
+.card {
+	margin-bottom: 20px;
+}
+
+.card-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-price {
+	margin: 0;
+}
+
+.search {
+	border: 1px solid gray;
+	padding: 0 5px 0 5px;
+	border-radius: 10px;
+	height: 37px;
+	margin-right: 10px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.no-data {
+	margin: 0 auto;
+	margin-top: 50px;
+}
