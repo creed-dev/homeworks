@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>eShop</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="app">
+			<div class="container">
+				<header>
+					<!-- <cart>
+						<cart-item
+							v-for="good in cart"
+							v-bind:title="good.title"
+							v-bind:price="good.price"
+							v-bind:id="good.id"
+						/><a
+							href="#"
+							class="btn btn-danger card-btn"
+							v-on:click="removeFromCartHandler"
+							>Убрать</a
+						>
+					</cart> -->
+					<search v-on:valueСhange="searchHandler"></search>
+					<cart>
+						<cart-item 
+						v-for="good in cart" 
+						v-bind:title="good.title" 
+						v-bind:price="good.price"
+						v-bind:id="good.id"/>
+						<a 
+						href="#" 
+						class="btn btn-danger card-btn" 
+						v-on:click="removeFromCartHandler"
+						>Убрать</a>
+						</cart-item>
+					</cart>
+				
+				</header>
+				<no-data v-if="filtredGoods.length === 0"></no-data>
+				<main>
+					<div class="goods-list">
+						<goods-item
+							v-for="good in filtredGoods"
+							v-bind:title="good.title"
+							v-bind:price="good.price"
+							v-bind:id="good.id"
+							><a
+								href="#"
+								class="btn btn-success card-btn"
+								v-on:click="addToCartHandler"
+								>Купить</a
+							></goods-item
+						>
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
